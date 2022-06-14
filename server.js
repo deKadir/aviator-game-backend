@@ -11,7 +11,13 @@ app.use(
     origin: 'https://aviator-game.vercel.app/',
   })
 );
-const io = new Server(server, { cors: 'https://aviator-game.vercel.app/' });
+const io = new Server(server, {
+  cors: {
+    origin: `https://aviator-game.vercel.app/`, // I copied the origin in the error message and pasted here
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
+});
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
