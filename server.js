@@ -5,7 +5,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const server = http.createServer(app);
-const port = 8080 || 3213;
+const port = 3213;
 app.use(
   cors({
     origin: 'https://aviator-game.vercel.app',
