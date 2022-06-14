@@ -5,7 +5,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const server = http.createServer(app);
 const port = 8080;
-const io = new Server(server, { cors: '*:*' });
+const io = new Server(server, { cors: 'https://aviator-game.vercel.app/' });
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
