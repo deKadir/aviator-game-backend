@@ -7,12 +7,12 @@ const cors = require('cors');
 const server = http.createServer(app);
 app.use(
   cors({
-    origin: 'https://aviator-game.vercel.app',
+    origin: '*',
   })
 );
 const io = new Server(server, {
   cors: {
-    origin: `https://aviator-game.vercel.app`,
+    origin: `*`,
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -20,7 +20,7 @@ const io = new Server(server, {
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-server.listen(process.env.PORT, () => {
+server.listen(process.env.PORT || 8080, () => {
   console.log(`App listening on port ${process.env.PORT}`);
 
   Socket({ io });

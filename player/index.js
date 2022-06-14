@@ -13,7 +13,10 @@ function findPlayerIndex(socketId) {
 }
 function updateBalance(socketId, cash) {
   const index = findPlayerIndex(socketId);
-  if (index >= 0) players[index].balance += cash;
+
+  const newBalance = players[index].balance + cash;
+  if (index >= 0 && newBalance >= 0 && typeof cash === 'number')
+    players[index].balance = newBalance;
 }
 function updatePlayer(io, socket) {
   const player = findPlayer(socket.id);
