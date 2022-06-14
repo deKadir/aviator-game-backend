@@ -8,12 +8,12 @@ const server = http.createServer(app);
 const port = 8080 || 3213;
 app.use(
   cors({
-    origin: 'https://aviator-game.vercel.app/',
+    origin: 'http://aviator-game.vercel.app/',
   })
 );
 const io = new Server(server, {
   cors: {
-    origin: `https://aviator-game.vercel.app/`, // I copied the origin in the error message and pasted here
+    origin: `http://aviator-game.vercel.app/`, // I copied the origin in the error message and pasted here
     methods: ['GET', 'POST'],
     credentials: true,
   },
