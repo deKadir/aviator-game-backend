@@ -14,7 +14,7 @@ function makeBet({ socketId, bet }, io) {
   if (!status.isPlaying && !hasBet && bet >= 0) {
     const player = findPlayer(socketId);
     const floatBet = parseFloat(bet);
-    if (player?.balance >= bet && typeof bet === 'number') {
+    if (player?.balance >= bet) {
       updateBalance(socketId, -floatBet);
       bets.push({
         socketId,
