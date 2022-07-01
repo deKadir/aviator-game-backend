@@ -78,7 +78,6 @@ function generateNumber() {
   if (possibility === 10) {
     num = Math.random() * 190 + 10;
   }
-  console.log(num);
   return num;
 }
 function getGameStatus() {

@@ -2,7 +2,7 @@ let players = [];
 
 function addPlayer({ socketId, nickname }) {
   if (socketId && nickname) {
-    players.push({ socketId, nickname, balance: 1000 });
+    players.push({ socketId, nickname, balance: 100000 });
   }
 }
 function findPlayer(socketId) {
